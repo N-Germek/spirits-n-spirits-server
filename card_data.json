@@ -15,6 +15,11 @@
         "page": "https://commons.wikimedia.org/wiki/File:RWS_Tarot_01_Magician.jpg",
         "src": "https://upload.wikimedia.org/wikipedia/commons/d/de/RWS_Tarot_01_Magician.jpg",
         "attribution": "Pamela Colman Smith, Public domain, via Wikimedia Commons"
+      },
+      "drinks":
+      {
+        "alcoholic": "The Strange Weaver",
+        "non-alcoholic": "Thai Coffee"
       }
     },
     {
@@ -31,6 +36,11 @@
         "page": "https://commons.wikimedia.org/wiki/File:RWS_Tarot_02_High_Priestess.jpg",
         "src": "https://upload.wikimedia.org/wikipedia/commons/8/88/RWS_Tarot_02_High_Priestess.jpg",
         "attribution": "Pamela Coleman Smith, Public domain, via Wikimedia Commons"
+      },
+      "drinks":
+      {
+        "alcoholic": "Pink Lady",
+        "non-alcoholic": "Alice Cocktail"
       }
     },
     {
@@ -47,6 +57,11 @@
         "page": "https://commons.wikimedia.org/wiki/File:RWS_Tarot_03_Empress.jpg",
         "src": "https://upload.wikimedia.org/wikipedia/commons/d/d2/RWS_Tarot_03_Empress.jpg",
         "attribution": "Pamela Coleman Smith, Public domain, via Wikimedia Commons"
+      },
+      "drinks":
+      {
+        "alcoholic": "Royal Bitch",
+        "non-alcoholic": "Aloha Fruit Punch"
       }
     },
     {
@@ -63,6 +78,11 @@
         "page": "https://commons.wikimedia.org/wiki/File:RWS_Tarot_04_Emperor.jpg",
         "src": "https://upload.wikimedia.org/wikipedia/commons/c/c3/RWS_Tarot_04_Emperor.jpg",
         "attribution": "Pamela Coleman Smith, Public domain, via Wikimedia Commons"
+      },
+      "drinks":
+      {
+        "alcoholic": "Royal Flush",
+        "non-alcoholic": "Spanish chocolate"
       }
     },
     {
@@ -79,6 +99,11 @@
         "page": "https://commons.wikimedia.org/wiki/File:RWS_Tarot_05_Hierophant.jpg",
         "src": "https://upload.wikimedia.org/wikipedia/commons/8/8d/RWS_Tarot_05_Hierophant.jpg",
         "attribution": "Pamela Coleman Smith, Public domain, via Wikimedia Commons"
+      },
+      "drinks":
+      {
+        "alcoholic": "Old Fashioned",
+        "non-alcoholic": "Banana Milk Shake"
       }
     },
     {
@@ -95,6 +120,11 @@
         "page": "https://commons.wikimedia.org/wiki/File:RWS-06-thelovers.jpg",
         "src": "https://upload.wikimedia.org/wikipedia/commons/8/8d/RWS-06-thelovers.jpg",
         "attribution": "Pamela Coleman Smith, Public domain, via Wikimedia Commons"
+      },
+      "drinks":
+      {
+        "alcoholic": "Sex on the Beach",
+        "non-alcoholic": "Afterglow"
       }
     },
     {
@@ -111,6 +141,11 @@
         "page": "https://commons.wikimedia.org/wiki/File:RWS_Tarot_07_Chariot.jpg",
         "src": "https://upload.wikimedia.org/wikipedia/commons/9/9b/RWS_Tarot_07_Chariot.jpg",
         "attribution": "Pamela Coleman Smith, Public domain, via Wikimedia Commons"
+      },
+      "drinks":
+      {
+        "alcoholic": "Horse's Neck",
+        "non-alcoholic": "Apple Karate"
       }
     },
     {
@@ -127,6 +162,11 @@
         "page": "https://commons.wikimedia.org/wiki/File:RWS_Tarot_08_Strength.jpg",
         "src": "https://upload.wikimedia.org/wikipedia/commons/f/f5/RWS_Tarot_08_Strength.jpg",
         "attribution": "Pamela Coleman Smith, Public domain, via Wikimedia Commons"
+      },
+      "drinks":
+      {
+        "alcoholic": "Long Island Iced Tea",
+        "non-alcoholic": "Pysch Vitamin Light"
       }
     },
     {
@@ -143,6 +183,11 @@
         "page": "https://commons.wikimedia.org/wiki/File:RWS_Tarot_09_Hermit.jpg",
         "src": "https://upload.wikimedia.org/wikipedia/commons/4/4d/RWS_Tarot_09_Hermit.jpg",
         "attribution": "Pamela Colman Smith, Public domain, via Wikimedia Commons"
+      },
+      "drinks":
+      {
+        "alcoholic": "Coffee Liqueur",
+        "non-alcoholic": "Coke and Drops"
       }
     },
     {
@@ -159,6 +204,11 @@
         "page": "https://commons.wikimedia.org/wiki/File:RWS_Tarot_10_Wheel_of_Fortune.jpg",
         "src": "https://upload.wikimedia.org/wikipedia/commons/3/3c/RWS_Tarot_10_Wheel_of_Fortune.jpg",
         "attribution": "Pamela Coleman Smith, Public domain, via Wikimedia Commons"
+      },
+      "drinks":
+      {
+        "alcoholic": [],
+        "non-alcoholic": []
       }
     },
     {
@@ -175,6 +225,11 @@
         "page": "https://commons.wikimedia.org/wiki/File:RWS_Tarot_11_Justice.jpg",
         "src": "https://upload.wikimedia.org/wikipedia/commons/e/e0/RWS_Tarot_11_Justice.jpg",
         "attribution": "Pamela Coleman Smith, Public domain, via Wikimedia Commons"
+      },
+      "drinks":
+      {
+        "alcoholic": "Mulled Wine",
+        "non-alcoholic": "Limeade"
       }
     },
     {
@@ -191,6 +246,11 @@
         "page": "https://commons.wikimedia.org/wiki/File:RWS_Tarot_12_Hanged_Man.jpg",
         "src": "https://upload.wikimedia.org/wikipedia/commons/2/2b/RWS_Tarot_12_Hanged_Man.jpg",
         "attribution": "Pamela Coleman Smith, Public domain, via Wikimedia Commons"
+      },
+      "drinks":
+      {
+        "alcoholic": "Corpse Reviver",
+        "non-alcoholic": "Strawberry Shivers"
       }
     },
     {
@@ -207,6 +267,11 @@
         "page": "https://commons.wikimedia.org/wiki/File:RWS_Tarot_13_Death.jpg",
         "src": "https://upload.wikimedia.org/wikipedia/commons/d/d7/RWS_Tarot_13_Death.jpg",
         "attribution": "Pamela Coleman Smith, Public domain, via Wikimedia Commons"
+      },
+      "drinks":
+      {
+        "alcoholic": [],
+        "non-alcoholic": []
       }
     },
     {
@@ -223,6 +288,11 @@
         "page": "https://commons.wikimedia.org/wiki/File:RWS_Tarot_14_Temperance.jpg",
         "src": "https://upload.wikimedia.org/wikipedia/commons/f/f8/RWS_Tarot_14_Temperance.jpg",
         "attribution": "Pamela Coleman Smith, Public domain, via Wikimedia Commons"
+      },
+      "drinks":
+      {
+        "alcoholic": "Screwdriver",
+        "non-alcoholic": "Microwave Hot Cocoa"
       }
     },
     {
@@ -239,6 +309,11 @@
         "page": "https://commons.wikimedia.org/wiki/File:RWS_Tarot_15_Devil.jpg",
         "src": "https://upload.wikimedia.org/wikipedia/commons/5/55/RWS_Tarot_15_Devil.jpg",
         "attribution": "Pamela Coleman Smith, Public domain, via Wikimedia Commons"
+      },
+      "drinks":
+      {
+        "alcoholic": "Strawberry Daiquiri",
+        "non-alcoholic": "Tomato Tang"
       }
     },
     {
@@ -255,6 +330,11 @@
         "page": "https://commons.wikimedia.org/wiki/File:RWS_Tarot_16_Tower.jpg",
         "src": "https://upload.wikimedia.org/wikipedia/commons/5/53/RWS_Tarot_16_Tower.jpg",
         "attribution": "Pamela Coleman Smith (d 1951), Public domain, via Wikimedia Commons"
+      },
+      "drinks":
+      {
+        "alcoholic": "Bloody Mary",
+        "non-alcoholic": "Egg Cream"
       }
     },
     {
@@ -271,6 +351,11 @@
         "page": "https://commons.wikimedia.org/wiki/File:RWS_Tarot_17_Star.jpg",
         "src": "https://upload.wikimedia.org/wikipedia/commons/d/db/RWS_Tarot_17_Star.jpg",
         "attribution": "Pamela Coleman Smith, Public domain, via Wikimedia Commons"
+      },
+      "drinks":
+      {
+        "alcoholic": "Jamaican Coffee",
+        "non-alcoholic": "Apello"
       }
     },
     {
@@ -287,6 +372,11 @@
         "page": "https://commons.wikimedia.org/wiki/File:RWS_Tarot_18_Moon.jpg",
         "src": "https://upload.wikimedia.org/wikipedia/commons/7/7f/RWS_Tarot_18_Moon.jpg",
         "attribution": "Pamela Coleman Smith, Public domain, via Wikimedia Commons"
+      },
+      "drinks":
+      {
+        "alcoholic": "Black Forest Shake",
+        "non-alcoholic": "Grape lemon pineapple Smoothie"
       }
     },
     {
@@ -303,6 +393,11 @@
         "page": "https://commons.wikimedia.org/wiki/File:RWS_Tarot_19_Sun.jpg",
         "src": "https://upload.wikimedia.org/wikipedia/commons/1/17/RWS_Tarot_19_Sun.jpg",
         "attribution": "Pamela Coleman Smith, Public domain, via Wikimedia Commons"
+      },
+      "drinks":
+      {
+        "alcoholic": "Martini",
+        "non-alcoholic": "Kiwi Papaya Smoothie"
       }
     },
     {
@@ -319,6 +414,11 @@
         "page": "https://commons.wikimedia.org/wiki/File:RWS_Tarot_20_Judgement.jpg",
         "src": "https://upload.wikimedia.org/wikipedia/commons/d/dd/RWS_Tarot_20_Judgement.jpg",
         "attribution": "Pamela Coleman Smith, Public domain, via Wikimedia Commons"
+      },
+      "drinks":
+      {
+        "alcoholic": "Zorro",
+        "non-alcoholic": "Masala Chai"
       }
     },
     {
@@ -335,6 +435,11 @@
         "page": "https://commons.wikimedia.org/wiki/File:RWS_Tarot_00_Fool.jpg",
         "src": "https://upload.wikimedia.org/wikipedia/commons/9/90/RWS_Tarot_00_Fool.jpg",
         "attribution": "Pamela Colman Smith, Public domain, via Wikimedia Commons"
+      },
+      "drinks":
+      {
+        "alcoholic": "Bible Belt",
+        "non-alcoholic": "Bora Bora"
       }
     },
     {
@@ -351,6 +456,11 @@
         "page": "https://commons.wikimedia.org/wiki/File:RWS_Tarot_21_World.jpg",
         "src": "https://upload.wikimedia.org/wikipedia/commons/f/ff/RWS_Tarot_21_World.jpg",
         "attribution": "Pamela Coleman Smith, Public domain, via Wikimedia Commons"
+      },
+      "drinks":
+      {
+        "alcoholic": "The Evil Blue Thing",
+        "non-alcoholic": "Frappé"
       }
     },
     {
