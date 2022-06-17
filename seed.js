@@ -7,7 +7,7 @@ mongoose.connect(process.env.DATABASE_URL);
 const User = require('./models/user');
 
 async function seed() {
-  const newUser = new User({
+  await User.create({
     email: 'derek.j.douglas13@gmail.com',
     timestamp: Date.now(),
     tarotToday: {
@@ -92,10 +92,7 @@ async function seed() {
       }
     ]
   });
-  newUser.save(function(err){
-    if (err) console.error(err);
-    else console.log('Saved test user');
-  });
+  console.log('Seed finished');
   mongoose.disconnect();
 }
 
