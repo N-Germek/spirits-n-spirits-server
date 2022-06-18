@@ -12,7 +12,10 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 // app.use(verifyUser);
-
+app.use((req, res, next) => {
+  console.log(new Date(), req.url);
+  next();
+})
 mongoose.connect(process.env.DATABASE_URL);
 const db = mongoose.connection;
 db.on('error', console.error.bind(console, 'connection error:'));
