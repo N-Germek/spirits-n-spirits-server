@@ -12,7 +12,7 @@ Tarot.draw = async (request, response, next) => {
     console.log(drawnCard.name);
     if (drawnCard.name === 'Wheel Of Fortune') {
       //use ternary for alcohol/non-alcoholic
-      let dbTarget = request.body.drinkTarget === 'alcoholic' ? 'Alcoholic' : 'Non_Alcoholic';
+      let dbTarget = request.params.drinkTarget === 'alcoholic' ? 'Alcoholic' : 'Non_Alcoholic';
       apiURL = `${process.env.COCKTAILDB_URL}filter.php?a=${encodeURIComponent(dbTarget)}`;
       let filteredDrinks = await axios.get(apiURL);
       let banana = filteredDrinks.data.drinks;
