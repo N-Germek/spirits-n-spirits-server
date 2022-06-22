@@ -29,6 +29,6 @@ app.post('/history', Handler.addUser);
 app.delete('/history/:id', Handler.deleteUser);
 app.put('/history/:id', Handler.updateUser);
 
-app.get('/draw', Tarot.draw);
+app.get('/draw', Handler.draw);
 
 app.listen(PORT, () => console.log(`listening on ${PORT}`));
