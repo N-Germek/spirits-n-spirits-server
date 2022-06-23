@@ -12,18 +12,18 @@ const CardData = require('../card_data.json');
 
 // // client needs to getUser on load and store user _id in state for later calls
 
-Handler.getUser = async (request, response, next) => {
-  try {
-    response.status(200).json(await User.findOne({ email: request.user.email, _id: request.params.id }));
-  } catch (error) { next(error.message); }
-};
+// Handler.getUser = async (request, response, next) => {
+//   try {
+//     response.status(200).json(await User.findOne({ email: request.user.email, _id: request.params.id }));
+//   } catch (error) { next(error.message); }
+// };
 
 Handler.deleteUser = async (request, response, next) => {
-  const user = await User.findOne({ email: request.user.email, _id: request.params.id });
+  const user = await User.findOne({ email: request.user.email });
   try {
     if (!user) response.status(400).send('Unable to delete user');
     else {
-      await User.findByIdAndDelete(request.params.id);
+      await User.findByIdAndDelete(user._id);
       response.status(204).send('Deleted');
     }
   } catch (error) { next(error.message); }
