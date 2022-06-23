@@ -95,7 +95,7 @@ Handler.deleteUser = async (request, response, next) => {
 // };// TODO: CLEAN ME OH GOD
 
 Handler.process = async (request, response, next) => {
-  //get call, compare sender email to DB emails. If there is an email, check for its cache. If cache has current timestamp, return that data. If cache is expired, run this.draw. If there is not email, create user, run this.draw
+  //get call, compare sender email to DB emails. If there is an email, check for its cache. If cache has current timestamp, return that data. If cache is expired, run Handler.draw. If there is not email, create user, run this.draw
   const userCheck = await User.findOne({ email: request.user.email });
   console.log(userCheck, 'user check');
   let gatheredData;
