@@ -6,7 +6,6 @@ const cors = require('cors');
 const mongoose = require('mongoose');
 const verifyUser = require('./auth.js');
 const Handler = require('./modules/handler.js');
-const Tarot = require('./modules/tarot.js');
 
 const app = express();
 app.use(cors());
