@@ -24,10 +24,10 @@ const PORT = process.env.PORT || 3001;
 
 app.get('/test', (request, response) => response.send('test request received'));
 app.get('/history', Handler.getUser);
-app.post('/history', Handler.addUser);
+// app.post('/history', Handler.addUser);
 app.delete('/history/:id', Handler.deleteUser);
-app.put('/history/:id', Handler.updateUser);
+// app.put('/history/:id', Handler.updateUser);
 
-app.get('/draw', Handler.draw);
+app.get('/draw', Handler.process);
 
 app.listen(PORT, () => console.log(`listening on ${PORT}`));

@@ -4,13 +4,13 @@ const Handler = {};
 const axios = require('axios');
 const CardData = require('../card_data.json');
 
-Handler.addUser = async (request, response, next) => {
-  try {
-    response.status(200).json(await new User(request.body).save());
-  } catch (error) { next(error.message); }
-};
+// Handler.addUser = async (request, response, next) => {
+//   try {
+//     response.status(200).json(await new User(request.body).save());
+//   } catch (error) { next(error.message); }
+// };
 
-// client needs to getUser on load and store user _id in state for later calls
+// // client needs to getUser on load and store user _id in state for later calls
 
 Handler.getUser = async (request, response, next) => {
   try {
@@ -29,19 +29,19 @@ Handler.deleteUser = async (request, response, next) => {
   } catch (error) { next(error.message); }
 };
 
-Handler.updateUser = async (request, response, next) => {
-  try {
-    const user = await User.findOne({ email: request.user.email, _id: request.params.id });
-    if (!user) response.status(400).send('Unable to find user');
-    else {
-      const history = user.history;
-      history.push({ tarotName: user.tarotToday.name, drinkName: user.drinkChosen.strDrink, timestamp: user.timestamp });
-      // requestbody should include the new tarot and drink objects as tarotObject and drinkObject
-      response.status(200).send(await User.findByIdAndUpdate(request.params.id, { tarotToday: request.body.tarotObject, drinkChosen: request.body.drinkObject, timestamp: Date.now(), history: history }, { new: true, overwrite: true }));
-    }
-    // pull down user data, push timestamp, tarot and drink names to history array as object, then update tarot and drink today to new with new timestamp
-  } catch (error) { next(error.message); }
-};
+// Handler.updateUser = async (request, response, next) => {
+//   try {
+//     const user = await User.findOne({ email: request.user.email, _id: request.params.id });
+//     if (!user) response.status(400).send('Unable to find user');
+//     else {
+//       const history = user.history;
+//       history.push({ tarotName: user.tarotToday.name, drinkName: user.drinkChosen.strDrink, timestamp: user.timestamp });
+//       // requestbody should include the new tarot and drink objects as tarotObject and drinkObject
+//       response.status(200).send(await User.findByIdAndUpdate(request.params.id, { tarotToday: request.body.tarotObject, drinkChosen: request.body.drinkObject, timestamp: Date.now(), history: history }, { new: true, overwrite: true }));
+//     }
+//     // pull down user data, push timestamp, tarot and drink names to history array as object, then update tarot and drink today to new with new timestamp
+//   } catch (error) { next(error.message); }
+// };
 
 // Handler.draw = async (request, response, next) => {
 //   let apiURL;
@@ -102,20 +102,21 @@ Handler.process = async (request, response, next) => {
     // successful user found
     if (userCheck.timestamp >= Date.now() - 86400000) { // is data cache less than a day old?
       // return cache
-      const responseObject = {tarotToday: userCheck.tarotToday, drinkChosen: userCheck.drinkChosen};
+      const responseObject = { tarotToday: userCheck.tarotToday, drinkChosen: userCheck.drinkChosen };
       response.status(200).send(responseObject);
     } else {
       gatheredData = this.draw(request, response, next);
       const history = userCheck.history;
       history.push({ tarotName: userCheck.tarotToday.name, drinkName: userCheck.drinkChosen.strDrink, timestamp: userCheck.timestamp });
-      await User.findByIdAndUpdate(userCheck._id, { tarotToday: request.body.tarotObject, drinkChosen: request.body.drinkObject, timestamp: Date.now(), history: history }, { new: true, overwrite: true });
+      await User.findByIdAndUpdate(userCheck._id, { tarotToday: gatheredData.tarotToday, drinkChosen: gatheredData.drinkChosen, timestamp: Date.now(), history: history }, { new: true, overwrite: true });
       response.status(200).send(gatheredData);
       // store data then gather and return new data
     }
   } else {
     gatheredData = this.draw(request, response, next);
     // create user
-    response.status(200).json(await new User({}).save());
+    await new User({ email: request.user.email, tarotToday: gatheredData.tarotToday, drinkChosen: gatheredData.drinkChosen, timestamp: Date.now(), history: [] }).save();
+    response.status(200).send(gatheredData);
   }
 }
 
