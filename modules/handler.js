@@ -97,7 +97,7 @@ Handler.deleteUser = async (request, response, next) => {
 Handler.process = async (request, response, next) => {
   //get call, compare sender email to DB emails. If there is an email, check for its cache. If cache has current timestamp, return that data. If cache is expired, run this.draw. If there is not email, create user, run this.draw
   const userCheck = await User.findOne({ email: request.user.email });
-  console.log(userCheck);
+  console.log(userCheck, 'user check');
   let gatheredData;
   if (userCheck) {
     // successful user found
@@ -106,17 +106,19 @@ Handler.process = async (request, response, next) => {
       const responseObject = { tarotToday: userCheck.tarotToday, drinkChosen: userCheck.drinkChosen };
       response.status(200).send(responseObject);
     } else {
-      gatheredData = this.draw(request, response, next);
+      gatheredData = await Handler.draw(request, response, next);
       const history = userCheck.history;
       history.push({ tarotName: userCheck.tarotToday.name, drinkName: userCheck.drinkChosen.strDrink, timestamp: userCheck.timestamp });
-      await User.findByIdAndUpdate(userCheck._id, { tarotToday: gatheredData.tarotToday, drinkChosen: gatheredData.drinkChosen, timestamp: Date.now(), history: history }, { new: true, overwrite: true });
+      await User.findByIdAndUpdate(userCheck._id, { email: request.user.email, tarotToday: gatheredData.tarotToday, drinkChosen: gatheredData.drinkChosen, timestamp: Date.now(), history: history }, { new: true, overwrite: true });
+      console.log(gatheredData);
       response.status(200).send(gatheredData);
       // store data then gather and return new data
     }
   } else {
-    gatheredData = this.draw(request, response, next);
+    gatheredData = await Handler.draw(request, response, next);
     // create user
     await new User({ email: request.user.email, tarotToday: gatheredData.tarotToday, drinkChosen: gatheredData.drinkChosen, timestamp: Date.now(), history: [] }).save();
+    console.log(gatheredData);
     response.status(200).send(gatheredData);
   }
 }
@@ -129,7 +131,7 @@ Handler.process = async (request, response, next) => {
 
 
 
-Handler.randomDraw = async (request, response, next) => {
+Handler.randomDraw = async (request, response, next, drawnCard) => {
   let dbTarget = request.query.drinkTarget === 'alcoholic' ? 'Alcoholic' : 'Non_Alcoholic';
   const filterURL = `${process.env.COCKTAILDB_URL}filter.php?a=${encodeURIComponent(dbTarget)}`; // determines which filter we're using
   let filteredDrinks = await axios.get(filterURL);
@@ -137,14 +139,14 @@ Handler.randomDraw = async (request, response, next) => {
   let drinkTarget = drinkArray[Math.floor(Math.random() * drinkArray.length)].strDrink; // selects a random drink from our filter to query more data for
   const searchURL = `${process.env.COCKTAILDB_URL}search.php?s=${encodeURIComponent(drinkTarget)}`;
   let drink = await axios.get(searchURL);
-  return { drawnCard: drawnCard, drinkChosen: drink.data.drinks }; // returns user's new data for parent function
+  return { tarotToday: drawnCard, drinkChosen: drink.data.drinks[0] }; // returns user's new data for parent function
 }
 
-Handler.elseDraw = async (request, response, next) => {
+Handler.elseDraw = async (request, response, next, drawnCard) => {
   let drinkTarget = request.query.drinkTarget === 'alcoholic' ? drawnCard.drinks.alcoholic : drawnCard.drinks['non-alcoholic'];
   const searchURL = `${process.env.COCKTAILDB_URL}search.php?s=${encodeURIComponent(drinkTarget)}`;
   let drink = await axios.get(searchURL);
-  return { drawnCard: drawnCard, drinkChosen: drink.data };
+  return { tarotToday: drawnCard, drinkChosen: drink.data.drinks[0] };
 }
 
 Handler.draw = async (request, response, next) => {
@@ -154,11 +156,14 @@ Handler.draw = async (request, response, next) => {
     let drawnCard = major[Math.floor(Math.random() * major.length)];
     console.log(drawnCard.name);
     if (drawnCard.name === 'Wheel Of Fortune') {
-      gatheredData = this.randomDraw(request, response, next);
+      gatheredData = await Handler.randomDraw(request, response, next, drawnCard);
+      console.log('wheel worked');
     } else if (drawnCard.name === 'Death') {
-      gatheredData = this.randomDraw(request, response, next); // TODO: this should compare to user data
+      gatheredData = await Handler.randomDraw(request, response, next, drawnCard); // TODO: this should compare to user data
+      console.log('death worked');
     } else {
-      gatheredData = this.elseDraw(request, response, next);
+      gatheredData = await Handler.elseDraw(request, response, next, drawnCard);
+      console.log('else worked');
     }
     return gatheredData;  // returns data pool to parent function
   } catch (error) { // this might cause issues since we do not have a response here
