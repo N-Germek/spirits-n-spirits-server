@@ -27,7 +27,7 @@ app.get('/test', (request, response) => response.send('test request received'));
 // app.post('/history', Handler.addUser);
 app.delete('/delete', Handler.deleteUser);
 // app.put('/history/:id', Handler.updateUser);
-
+app.get('/history', Handler.history);
 app.get('/draw', Handler.process);
 
 app.listen(PORT, () => console.log(`listening on ${PORT}`));

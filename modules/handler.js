@@ -123,14 +123,6 @@ Handler.process = async (request, response, next) => {
   }
 }
 
-
-
-
-
-
-
-
-
 Handler.randomDraw = async (request, response, next, drawnCard) => {
   let dbTarget = request.query.drinkTarget === 'alcoholic' ? 'Alcoholic' : 'Non_Alcoholic';
   const filterURL = `${process.env.COCKTAILDB_URL}filter.php?a=${encodeURIComponent(dbTarget)}`; // determines which filter we're using
@@ -172,7 +164,19 @@ Handler.draw = async (request, response, next) => {
   }
 };
 
-
+Handler.history = async (request, response, next) => {
+  try {
+    const userCheck = await User.findOne({ email: request.user.email });
+    if(userCheck) {
+      response.status(200).send({ history: userCheck.history });
+    } else {
+      response.status(404).send('User not found');
+    }
+  } catch (error) {
+    console.log(error, 'Error');
+    next(error.message);
+  }
+};
 
 
 
