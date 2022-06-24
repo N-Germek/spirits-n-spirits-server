@@ -12,15 +12,15 @@ Version 1.0.4
 
 ## Description
 
-Welcome to Spirits & Spirits the ultimate site to start or end your day. Ever wonder what your tarot says? Join us in pulling a tarot card for your daily reading. A drink recommendation is also included and all you will need to do is decide weather it will be an alcoholic or not.
+Welcome to Spirits & Spirits the ultimate site to start or end your day. Ever wonder what your tarot says? Join us in pulling a tarot card for your daily reading. A drink recommendation is also included and all you will need to do is decide whether it will be an alcoholic or not.
 
 ## Problem Domain
 
-Do you question if the universe is trying to tell you something? Do you want to take some time with a drink and mull it over? Welsome to our App.
+Do you question if the universe is trying to tell you something? Do you want to take some time with a drink and mull it over? Welcome to our App.
 
 A leisure oriented application meant for a user to perform a simple tarot reading and self reflect upon it alongside drinks for the day.
 
-Stretch goals are to save the history of a drink and attach it to music recommendations based on the tarot card drawn name.
+Stretch goals are to attach it to music recommendations based on the tarot card drawn name.
 
 ## Tools Used
 
@@ -41,8 +41,23 @@ Stretch goals are to save the history of a drink and attach it to music recommen
 
 ## API Endpoints
 
-API endpoint of 
+/draw
+Draw requires a query of alcoholic or non-alcoholic
+/history
+/delete
 
 ## Schemas
 
-Our schema is 
+`{
+email: test@test.com,
+timestamp:123456,
+tarotToday: {}, //tarot data from API
+drinkChosen: {}, //drink data from API
+history: [
+  {
+  tarotName: The Lovers, //Extract just names for storage & retrieval
+  drinkName: Sex on the Beach,
+  timestamp: 12345 // Save timestamp for history display later
+  }
+ ]
+}`

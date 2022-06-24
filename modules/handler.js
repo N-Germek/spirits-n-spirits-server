@@ -151,14 +151,14 @@ Handler.draw = async (request, response, next) => {
       gatheredData = await Handler.randomDraw(request, response, next, drawnCard);
       console.log('wheel worked');
     } else if (drawnCard.name === 'Death') {
-      gatheredData = await Handler.randomDraw(request, response, next, drawnCard); // TODO: this should compare to user data
+      gatheredData = await Handler.randomDraw(request, response, next, drawnCard);
       console.log('death worked');
     } else {
       gatheredData = await Handler.elseDraw(request, response, next, drawnCard);
       console.log('else worked');
     }
     return gatheredData;  // returns data pool to parent function
-  } catch (error) { // this might cause issues since we do not have a response here
+  } catch (error) {
     console.log(error, 'Error');
     next(error.message);
   }
