@@ -27,7 +27,6 @@ Stretch goals are to attach it to music recommendations based on the tarot card 
 [VS Code](https://code.visualstudio.com/)
 [Tarot](https://github.com/ekelen/tarot-api)
 [Cocktail DB](https://www.thecocktaildb.com/api.php)
-<!-- [Spotify](https://developer.spotify.com/documentation/web-api/quick-start/) -->
 [Trello](https://trello.com/b/BlU3ilFX/spirits-spirits)
 [Miro](https://miro.com/welcomeonboard/ZmNzNGxZOW9jaHFXZm9NN3BDV0dUaU52VUJQNnhKcjVJZFhPY21RNW1YcWZxVVhVYnFZS2xybVdUYXpSMTBXbHwzNDU4NzY0NTI1MDk3NTM5NjAw?share_link_id=983273918266)
 
