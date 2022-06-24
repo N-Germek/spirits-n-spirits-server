@@ -12,18 +12,18 @@ const CardData = require('../card_data.json');
 
 // // client needs to getUser on load and store user _id in state for later calls
 
-Handler.getUser = async (request, response, next) => {
-  try {
-    response.status(200).json(await User.findOne({ email: request.user.email, _id: request.params.id }));
-  } catch (error) { next(error.message); }
-};
+// Handler.getUser = async (request, response, next) => {
+//   try {
+//     response.status(200).json(await User.findOne({ email: request.user.email, _id: request.params.id }));
+//   } catch (error) { next(error.message); }
+// };
 
 Handler.deleteUser = async (request, response, next) => {
-  const user = await User.findOne({ email: request.user.email, _id: request.params.id });
+  const user = await User.findOne({ email: request.user.email });
   try {
     if (!user) response.status(400).send('Unable to delete user');
     else {
-      await User.findByIdAndDelete(request.params.id);
+      await User.findByIdAndDelete(user._id);
       response.status(204).send('Deleted');
     }
   } catch (error) { next(error.message); }
@@ -95,7 +95,7 @@ Handler.deleteUser = async (request, response, next) => {
 // };// TODO: CLEAN ME OH GOD
 
 Handler.process = async (request, response, next) => {
-  //get call, compare sender email to DB emails. If there is an email, check for its cache. If cache has current timestamp, return that data. If cache is expired, run this.draw. If there is not email, create user, run this.draw
+  //get call, compare sender email to DB emails. If there is an email, check for its cache. If cache has current timestamp, return that data. If cache is expired, run Handler.draw. If there is not email, create user, run this.draw
   const userCheck = await User.findOne({ email: request.user.email });
   console.log(userCheck, 'user check');
   let gatheredData;
@@ -122,14 +122,6 @@ Handler.process = async (request, response, next) => {
     response.status(200).send(gatheredData);
   }
 }
-
-
-
-
-
-
-
-
 
 Handler.randomDraw = async (request, response, next, drawnCard) => {
   let dbTarget = request.query.drinkTarget === 'alcoholic' ? 'Alcoholic' : 'Non_Alcoholic';
@@ -159,20 +151,32 @@ Handler.draw = async (request, response, next) => {
       gatheredData = await Handler.randomDraw(request, response, next, drawnCard);
       console.log('wheel worked');
     } else if (drawnCard.name === 'Death') {
-      gatheredData = await Handler.randomDraw(request, response, next, drawnCard); // TODO: this should compare to user data
+      gatheredData = await Handler.randomDraw(request, response, next, drawnCard);
       console.log('death worked');
     } else {
       gatheredData = await Handler.elseDraw(request, response, next, drawnCard);
       console.log('else worked');
     }
     return gatheredData;  // returns data pool to parent function
-  } catch (error) { // this might cause issues since we do not have a response here
+  } catch (error) {
     console.log(error, 'Error');
     next(error.message);
   }
 };
 
-
+Handler.history = async (request, response, next) => {
+  try {
+    const userCheck = await User.findOne({ email: request.user.email });
+    if(userCheck) {
+      response.status(200).send({ history: userCheck.history });
+    } else {
+      response.status(404).send('User not found');
+    }
+  } catch (error) {
+    console.log(error, 'Error');
+    next(error.message);
+  }
+};
 
 
 

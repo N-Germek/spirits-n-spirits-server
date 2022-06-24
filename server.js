@@ -23,11 +23,11 @@ db.once('open', () => console.log('Mongoose is connected'));
 const PORT = process.env.PORT || 3001;
 
 app.get('/test', (request, response) => response.send('test request received'));
-app.get('/history', Handler.getUser);
+// app.get('/history', Handler.getUser);
 // app.post('/history', Handler.addUser);
-app.delete('/history/:id', Handler.deleteUser);
+app.delete('/delete', Handler.deleteUser);
 // app.put('/history/:id', Handler.updateUser);
-
+app.get('/history', Handler.history);
 app.get('/draw', Handler.process);
 
 app.listen(PORT, () => console.log(`listening on ${PORT}`));
