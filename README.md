@@ -7,8 +7,9 @@ Version 1.0.1
 Version 1.0.2
 Version 1.0.3
 Version 1.0.4
+Version 1.0.5
 
-## Team: Derek Douglas, Natalija Germek, Zayah Lang
+## Authors: Derek Douglas, Natalija Germek, Zayah Lang
 
 ## Description
 
@@ -22,13 +23,24 @@ A leisure oriented application meant for a user to perform a simple tarot readin
 
 Stretch goals are to attach it to music recommendations based on the tarot card drawn name.
 
-## Tools Used
+## Links and Resources
 
-[VS Code](https://code.visualstudio.com/)
-[Tarot](https://github.com/ekelen/tarot-api)
-[Cocktail DB](https://www.thecocktaildb.com/api.php)
-[Trello](https://trello.com/b/BlU3ilFX/spirits-spirits)
-[Miro](https://miro.com/welcomeonboard/ZmNzNGxZOW9jaHFXZm9NN3BDV0dUaU52VUJQNnhKcjVJZFhPY21RNW1YcWZxVVhVYnFZS2xybVdUYXpSMTBXbHwzNDU4NzY0NTI1MDk3NTM5NjAw?share_link_id=983273918266)
+> [Final Presentation Deck](https://docs.google.com/presentation/d/15zSOEwCtuaxq1qTqAnCZv95NKtvKrP0UzTo9Wm1lKCY/edit?usp=sharing)
+
+> [Spirits & Spirits Client](https://github.com/N-Germek/spirits-n-spirits-client/blob/main/README.md)
+
+Tools Used
+
+> [VS Code](https://code.visualstudio.com/)
+
+> [Tarot](https://github.com/ekelen/tarot-api)
+
+> [Cocktail DB](https://www.thecocktaildb.com/api.php)
+
+<!-- [Spotify](https://developer.spotify.com/documentation/web-api/quick-start/) -->
+> [Trello](https://trello.com/b/BlU3ilFX/spirits-spirits)
+
+> [Miro](https://miro.com/welcomeonboard/ZmNzNGxZOW9jaHFXZm9NN3BDV0dUaU52VUJQNnhKcjVJZFhPY21RNW1YcWZxVVhVYnFZS2xybVdUYXpSMTBXbHwzNDU4NzY0NTI1MDk3NTM5NjAw?share_link_id=983273918266)
 
 ## Quick Start
 
